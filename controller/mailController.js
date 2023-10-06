@@ -1,20 +1,21 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-const email=process.env.email;
+const senderEmail=process.env.senderEmail;
+const receiverEmail=process.env.receiverEmail;
 const password = process.env.password;
-console.log(email ,"email" , password , "password" );
+
 const mailController = async(req, res) => {
     const transporter = await nodemailer.createTransport({
       service:"gmail",
       auth: {
-          user: email,
+          user: senderEmail,
           pass: password
       }
     });
 
       const info = await transporter.sendMail({
-        from: "rahul.joshi@c-zentrix.com",
-        to: "rahuljoshi9837@gmail.com",
+        from: senderEmail,
+        to: receiverEmail,
         subject: "Request to send mail through Node js API.",
         text: "Hello Rahul, This email send by Node js email Api. This is the testing email.",
         html: "<b>I hope you are doing well.?</b>",

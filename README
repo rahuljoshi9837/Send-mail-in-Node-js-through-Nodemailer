@@ -1,0 +1,21 @@
+For clone this project you need to write command :- 
+Command :- git clone https://github.com/rahuljoshi9837/Send-mail-in-Node-js-through-Nodemailer.git
+
+After clone the project you need to hit command :- 
+Command :- npm i (npm install)
+All the packages are installed after hitting this command packages like :- "dotenv","env","express","nodemailer","nodemon"
+
+After that create the .env file and write there 
+PORT=5000
+senderEmail="send email"
+receiverEmail="receiver email"
+PASSWORD="Your email password"
+
+And after that run command in your terminal is :- 
+Command :- npm run dev
+After hitting this command our server is running on port 5000.
+
+Open the postman and select the method POST and the url is http://localhost:5000/mail and hit you will get 
+"Mail sent to the user ": [
+        "receiver email address"
+    ]
